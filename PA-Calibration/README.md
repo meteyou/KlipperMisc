@@ -1,8 +1,8 @@
-#PA-Calibration with LA-Test
+# PA-Calibration with LA-Test
 This is a fast calibration test for Pressure Advanced. The idea is from [FHeilmann](https://github.com/FHeilmann).
 ![Screenshot Printed Pattern](screenshots/printed-pattern.png)
 
-##Requirement
+## Requirement
 At first we have to add a gcode-macro to convert the M900 LA gcode to set the Pressure Advance value. Please add the following lines in your `printer.cfg`.
 ```
 [gcode_macro M900]
@@ -11,7 +11,7 @@ gcode:
   SET_PRESSURE_ADVANCE ADVANCE={K}
 ```
 
-##Generate Gcode
+## Generate Gcode
 Now we use the [Marlin k-factor tool](https://marlinfw.org/tools/lin_advance/k-factor.html) to generate the gcode.
 Here are my parameters I used to generate the pattern in the picture above.
 
