@@ -1,16 +1,3 @@
-https://marlinfw.org/tools/lin_advance/k-factor.html
-
-this is what I used. 
-Some notes:
-- This generator inserts hard-coded start and stop gcode so make sure it does what you want
-- Unfortunately the generator just asks for the bed size, not for any offsets (in case your nozzle 0.0 is not your bed 0.0) I had to make no changes but make sure to watch your printer closely the first time you run this
-- Don't print the numbers, unless you want to hate yourself while removing them from your build plate
-- Add the following macro to klipper to make it work:
-
-
-  
-  Here's the parameters I used for the picture I posted earlier
-  
 #PA-Calibration with LA-Test
 This is a fast calibration test for Pressure Advanced. The idea is from [FHeilmann](https://github.com/FHeilmann).
 ![Screenshot Printed Pattern](screenshots/printed-pattern.png)
