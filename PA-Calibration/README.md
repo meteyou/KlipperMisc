@@ -6,9 +6,9 @@ This is a fast calibration test for Pressure Advanced. The idea is from [FHeilma
 At first we have to add a gcode-macro to convert the M900 LA gcode to set the Pressure Advance value. Please add the following lines in your `printer.cfg`.
 ```
 [gcode_macro M900]
-default_parameter_K=0
+description: Set Pressure Advance
 gcode:
-  SET_PRESSURE_ADVANCE ADVANCE={K}
+  SET_PRESSURE_ADVANCE ADVANCE={params.K|default(0)}
 ```
 
 ## Generate Gcode
