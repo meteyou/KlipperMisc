@@ -26,7 +26,7 @@ and use following config settings:
 - Enable Status LED: **check**
 - Status LED GPIO Pin: **PA13**
 
-this should then look like this:
+this should then look like this:  
 ![Screenshot of make menuconfig settings from CanBoot](images/canboot-make-menuconfig.png)
 
 use `q` for exit and `y` for save these settings.
@@ -45,9 +45,8 @@ make
 
 First, you have to put the board into DFU mode. To do this, press and hold the boot button and then disconnect and
 reconnect the power supply, or press the reset button on the board. With the command `dfu-util -l`, you can check if the
-board is in DFU mode. It should then look like this:
-
-![ebb-dfu-mode-list](images/canboot-dfu-mode.png)
+board is in DFU mode. It should then look like this:  
+![ebb-dfu-mode-list](images/canboot-dfu-mode.png)  
 
 If this is not the case, repeat the boot/restart process and test it again. If your board is in DFU mode, you can flash
 it with the following command:
@@ -70,7 +69,7 @@ and set the following settings:
 - Communication interface: **CAN bus (on PB0/PB1)**
 - CAN bus speed: 250000
 
-The result should look like this:
+The result should look like this:  
 ![Screenshot of make menuconfig settings from klipper](images/klipper-make-menuconfig.png)
 
 use `q` for exit and `y` for save these settings.
@@ -87,7 +86,7 @@ Find UUID of your BTT EBB36:
 python3 ~/CanBoot/scripts/flash_can.py -i can0 -q
 ```
 
-The output should look like this:
+The output should look like this:  
 ![Screenshot find UUID](images/canboot-query-uuid.png)
 
 With the UUID you have just read, you can now flash the board with:
