@@ -1,5 +1,5 @@
 # BigTreeTech EBB36 v1.1
-This is an instruction to set up the BTT EBB36 with clipper via CANBUS.
+This is an instruction to set up the BTT EBB36 with Klipper via CANBUS.
 
 > Use at least a Klipper version of v1.0 to use the board safely! In this commit, Kevin fixed a bug in the ADC
 > calculation of the STM32G0.
