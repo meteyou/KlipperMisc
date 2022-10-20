@@ -91,7 +91,7 @@ The output should look like this:
 
 With the UUID you have just read, you can now flash the board with:
 ```bash
-python3 scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u <uuid>
+python3 ~/CanBoot/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u <uuid>
 ```
 ![img.png](images/klipper-flash-via-can.png)
 
