@@ -19,7 +19,7 @@ make menuconfig
 ```
 and use following config settings:
 - Micro-controller Architecture: **STMicroelectronics STM32**
-- Processor model: **STM31B0B1**
+- Processor model: **STM32G0B1**
 - Build CanBoot deployment application: **8KiB bootloader**
 - Clock Reference: **8 MHz crystal**
 - Communication interface: **CAN bus (on PB0/PB1)**
