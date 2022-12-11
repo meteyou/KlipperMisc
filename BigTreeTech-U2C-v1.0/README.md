@@ -107,7 +107,7 @@ To flash the Bootloader, we have to switch the board in the DFU mode again by ho
 plugging the USB cable. You can check it with `dfu-util -l`. If the board is in DFU mode, you can flash the Bootloader
 with the following command:
 ```bash
-dfu-util -a 0 -D out/canboot.bin -s 0x08000000:mass-erase:force
+dfu-util -a 0 -D ~/CanBoot/out/canboot.bin -s 0x08000000:mass-erase:force
 ```
 
 You must reboot the board (unplugging/plugging) to check if the flash progress was successful. If you use the command
@@ -147,14 +147,13 @@ make
 ### Flash Klipper firmware via CanBoot
 With the serial/by-id path we got above, we can flash the klipper firmware:
 ```bash
-cd ~/CanBoot
-python3 scripts/flash_can.py -f ~/klipper/out/klipper.bin -d <serial device>
+python3 ~/CanBoot/scripts/flash_can.py -f ~/klipper/out/klipper.bin -d <serial device>
 ```
 (change <serial device> to the serial/by-id path from above)
 
 ![screenshot Klipper flash via CanBoot - USB](images/klipper-flash-usb.png)  
 
-After successfully flashing Klipper with USB-to-can, the board should no longer be listed as a serial device. From this
+After successfully flashing Klipper with USB-to-CAN, the board should no longer be listed as a serial device. From this
 moment on, the board can only be controlled via CAN.
 
 ### Add can0 interface in mainsailOS
@@ -207,9 +206,8 @@ max_temp: 100
 ```
 
 ### Short appendix about Klipper firmware updates
-Since the board can only be addressed via CAN, further clipper updates must also be flashed to the board via CAN. This
+Since the board can only be addressed via CAN, further Klipper updates must also be flashed to the board via CAN. This
 is very easy with the CanBoot bootloader:
 ```bash 
-cd ~/CanBoot
-python3 scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u <uuid>
+python3 ~/CanBoot/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u <uuid>
 ```
