@@ -1,8 +1,8 @@
-# BigTreeTech U2C v1.0
+# BigTreeTech U2C
 This is an instruction to set up the BTT U2C with Klipper. There are two possible variants. Use the board as a pure
 CANBUS adapter (candlelight FW) or a Klipper USB-to-CAN adapter.
 
-## CandleLight_FW (simple way)
+## CandleLight_FW (simple way - only U2C V1.x) 
 CandleLight_FW is a firmware for STM32F042x/STM32F072xB based USB-CAN adapters.
 
 Github: [github.com/candle-usb/candleLight_fw](https://github.com/candle-usb/candleLight_fw)
@@ -26,7 +26,7 @@ cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/gcc-arm-none-eabi-8-2019-q3-update.cmak
 make candleLight_fw
 ```
 
-### Flash CandleLight_FW to BTT U2C
+### Flash CandleLight_FW to BTT U2C V1.x
 First, the adapter must boot in DFU mode. Press the boot button and then connect the USB cable. With `dfu-util -l`, you
 can check whether the adapter is booted in DFU mode. This should look like this:  
 
@@ -68,7 +68,7 @@ The Klipper MCU firmware has a function to run as a USB-to-CAN adapter. This has
 boards with an integrated CAN interface, because it can be used as MCU and USB-to-CAN adapter simultaneously.
 Unfortunately, this has a slight edge with the BTT U2C as no free pins are available.
 
-### Flash CanBoot on the BTT U2C v1.0 (optional)
+### Flash CanBoot on the BTT U2C (optional)
 This step is not necessary for this way, but it fits very well for this solution, and you can easily update the board
 via CanBoot every time.
 
@@ -85,7 +85,8 @@ make menuconfig
 Settings:
 - Enable extra low-level configuration options: **check**
 - Micro-controller Architecture: **STMicroelectronics STM32**
-- Processor model: **STM32F072**
+- Processor model: **STM32F072** *(U2C v1.x)*
+- Processor model: **STM32G0B1** *(U2C v2.0)*
 - Build CanBoot deployment application: **8KiB bootloader**
 - Clock Reference: **8 MHz crystal**
 - Communication interface: **USB (on PA11/PA12)**
@@ -111,8 +112,8 @@ dfu-util -a 0 -D ~/CanBoot/out/canboot.bin -s 0x08000000:mass-erase:force
 ```
 
 You must reboot the board (unplugging/plugging) to check if the flash progress was successful. If you use the command
-`ls /dev/serial/by-id/*` and you can see a path with `usb-CanBoot_stm32f072...`, it was successful. This output means
-that the board was successfully booted in the CanBoot mode because it currently has no application firmware.
+`ls /dev/serial/by-id/*` and you can see a path with `usb-CanBoot_stm32...`, it was successful. This output means that
+the board was successfully booted in the CanBoot mode because it currently has no application firmware.
 
 ![screenshot ls serial/by-id](images/canboot-list-serial-by-id.png)  
 
@@ -126,7 +127,8 @@ make menuconfig
 Settings:
 - Enable extra low-level configuration options: **check**
 - Micro-controller Architecture: **STMicroelectronics STM32**
-- Processor model: **STM32F072**
+- Processor model: **STM32F072** *(U2C v1.x)*
+- Processor model: **STM32G0B1** *(U2C v2.0)*
 - Bootloader offset: **8KiB bootloader**
 - Clock Reference: **8 MHz crystal**
 - Communication interface: **USB to CAN bus bridge (USB on PA11/PA12)**
