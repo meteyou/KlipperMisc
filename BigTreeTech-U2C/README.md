@@ -211,5 +211,6 @@ max_temp: 100
 Since the board can only be addressed via CAN, further Klipper updates must also be flashed to the board via CAN. This
 is very easy with the CanBoot bootloader:
 ```bash 
-python3 ~/CanBoot/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u <uuid>
+python3 ~/CanBoot/scripts/flash_can.py -i can0 -r -u <uuid>
+python3 ~/CanBoot/scripts/flash_can.py -f ~/klipper/out/klipper.bin -d <serial device>
 ```
