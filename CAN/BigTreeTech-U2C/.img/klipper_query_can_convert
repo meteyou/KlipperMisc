@@ -1,0 +1,1 @@
+svg-term --in klipper_query_can --out klipper_query_can.svg --height 7 --width 82 --padding-x 10 --window

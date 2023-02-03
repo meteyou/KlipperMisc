@@ -1,0 +1,1 @@
+svg-term --in canboot_query_can --out canboot_query_can.svg --height 7 --width 70 --padding-x 10 --window
