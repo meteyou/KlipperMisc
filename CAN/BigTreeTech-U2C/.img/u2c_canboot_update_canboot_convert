@@ -1,0 +1,1 @@
+svg-term --in u2c_canboot_update_canboot --out u2c_canboot_update_canboot.svg --height 16 --width 93 --padding-x 10 --window

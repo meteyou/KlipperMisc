@@ -1,0 +1,1 @@
+svg-term --in ebb_dfu-util_flash_canboot --out ebb_dfu-util_flash_canboot.svg --height 16 --width 105 --padding-x 10 --window

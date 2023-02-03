@@ -1,0 +1,1 @@
+svg-term --in ebb_canboot_flash_klipper --out ebb_canboot_flash_klipper.svg --height 16 --width 93 --padding-x 10 --window
