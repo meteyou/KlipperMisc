@@ -12,6 +12,7 @@ This is a landing page for my [Klipper](https://github.com/Klipper3d/klipper) re
 
   * [BigTreeTech EBB36, EBB42 & EBB SB](CAN/BigTreeTech-EBB/)
   * [BigTreeTech U2C](CAN/BigTreeTech-U2C/)
+  * [BigTreeTech Octopus & Pro](CAN/BigTreeTech-Octopus/README.md)
 
 <br>
 
