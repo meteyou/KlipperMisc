@@ -8,10 +8,7 @@ This is a landing page for my [Klipper](https://github.com/Klipper3d/klipper) re
 
 * [PA Calibration with LA-Pattern](PA-Calibration/README.md)
 
-* [CAN](CAN/) related stuff
-
-  * [BigTreeTech EBB36, EBB42 & EBB SB](CAN/BigTreeTech-EBB/)
-  * [BigTreeTech U2C](CAN/BigTreeTech-U2C/)
+* My CAN related stuff got moved over to my [new docs](https://docs.meteyou.wtf/)
 
 <br>
 
